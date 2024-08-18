@@ -12,7 +12,9 @@ app.use(cors())
 app.use(express.json())
 
 app.get('/', (req, res) => {
-  res.status(200).send('PORT SERVER')
+  res.status(200).send({
+    message: 'Connected to Server',
+  })
 })
 app.use('/contact', contactRoute)
 
