@@ -22,3 +22,5 @@ mongoose
     app.listen(PORT, () => console.log(`Listening on Port : ${PORT}`))
   })
   .catch((error) => console.log(`Error Connecting to database ${error}`))
+
+module.exports = app
