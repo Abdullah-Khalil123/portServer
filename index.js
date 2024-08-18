@@ -1,10 +1,10 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const contactRoute = require('./routes/contactRoute')
+const contactRoute = require('../routes/contactRoute')
 const cors = require('cors')
 
 const app = express()
-const PORT = 4000 || process.env.PORT
+const PORT = 3000 || process.env.PORT
 app.use(cors())
 app.use(express.json())
 
