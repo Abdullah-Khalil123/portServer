@@ -1,10 +1,13 @@
+require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
 const contactRoute = require('./routes/contactRoute')
 const cors = require('cors')
 
 const app = express()
-const PORT = 5000 || process.env.PORT
+const PORT = process.env.PORT
+const DB_URI = process.env.DB_URI
+
 app.use(cors())
 app.use(express.json())
 
@@ -14,9 +17,7 @@ app.get('/', (req, res) => {
 app.use('/contact', contactRoute)
 
 mongoose
-  .connect(
-    'mongodb+srv://admin:admin@testing.hzylzer.mongodb.net/?retryWrites=true&w=majority&appName=Testing'
-  )
+  .connect(DB_URI)
   .then(() => {
     app.listen(PORT, () => console.log(`Listening on Port : ${PORT}`))
   })
