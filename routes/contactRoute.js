@@ -5,6 +5,7 @@ const Contact = require('../models/contactModel')
 router.post('/', async (req, res) => {
   try {
     const contactInfo = req.body
+    console.log(req.body)
     const newContact = new Contact(contactInfo)
     const savedContact = await newContact.save()
     res.status(201).send(savedContact)
