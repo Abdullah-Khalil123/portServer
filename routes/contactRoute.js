@@ -11,7 +11,7 @@ router.post('/', async (req, res) => {
   } catch (error) {
     if (error.code == 11000)
       res
-        .status(500)
+        .status(201)
         .send({ code: error.code, message: 'Dublicate Email Entry' })
     else res.status(500).send(error)
   }
