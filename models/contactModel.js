@@ -27,6 +27,10 @@ const contactSchema = mongoose.Schema({
     type: Boolean,
     required: true,
   },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
 })
 
 const ContactInfo = mongoose.model('contactInfo', contactSchema)
