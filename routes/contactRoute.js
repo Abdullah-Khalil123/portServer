@@ -7,7 +7,7 @@ router.post('/', async (req, res) => {
     const contactInfo = req.body
     const newContact = new Contact(contactInfo)
     const savedContact = await newContact.save()
-    res.status(201).send(savedContact)
+    res.status(200).send(savedContact)
   } catch (error) {
     if (error.code == 11000)
       res
